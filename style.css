@@ -1,0 +1,78 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.adulterated_food_items_card{
+    
+    display: flex;
+    flex-direction: column;
+    height: 500px;        /* Fixed height for images */
+  object-fit: cover;    /* Crop images to fit without distortion */
+}
+
+.card-img-top{
+
+}
+
+/* Make carousel fullscreen */
+.carousel-img {
+  height: 50vh;
+  width: 100vw;          /* full viewport height */
+  object-fit: cover;      /* prevent distortion */
+}
+
+.carousel-caption {
+  bottom: 20%;            /* position caption higher */
+}
+
+/* Animation effect */
+.animate-caption {
+  animation: fadeSlideIn 1.2s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 50vh;
+    width: 100vw;
+  }
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
+
+.video{
+    height: 300px;
+}
+img{
+    height: 196px;
+}

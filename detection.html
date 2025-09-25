@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detection Methods</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #2c3e50;
+      font-weight: bold;
+    }
+    .accordion-button {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .accordion-item {
+      border-radius: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    }
+    .navbar {
+      border-radius: 0 0 15px 15px;
+    }
+    .yt{
+        margin-top: 3rem;
+        height: 20rem;
+        width: 40rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">Food Adulteration</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="adulterated.html">Adulterated Foods</a></li>
+          <li class="nav-item"><a class="nav-link active" href="detection.html">Detection Methods</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Heading -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Detection of Adulterated Foods</h1>
+    <p class="text-center text-dark mb-4">
+      Simple household methods to check common food adulteration.
+    </p>
+
+    <!-- Accordion for Detection Tests -->
+    <div class="accordion" id="detectionAccordion">
+
+      <!-- Milk -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="milkHeading">
+          <button class="accordion-button collapsed bg-light text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#milkTest">
+            🥛 Milk Adulteration Tests
+          </button>
+        </h2>
+        <div id="milkTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Water Adulteration:</b> Put a drop of milk on a polished surface. Pure milk flows slowly leaving a white trail; adulterated with water flows quickly without a trace.</li>
+              <li><b>Starch Adulteration:</b> Add 2 drops of iodine solution. Blue color → starch present.</li>
+              <li><b>Detergent Adulteration:</b> Shake milk. Persistent foam indicates detergent.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honey -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="honeyHeading">
+          <button class="accordion-button collapsed bg-light text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#honeyTest">
+            🍯 Honey Adulteration Tests
+          </button>
+        </h2>
+        <div id="honeyTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Water Test:</b> Add a spoon of honey in a glass of water. Pure honey settles at the bottom, adulterated dissolves quickly.</li>
+              <li><b>Heat Test:</b> Heat a small amount. Pure honey caramelizes but does not foam; adulterated foams strongly.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="coffeeHeading">
+          <button class="accordion-button collapsed bg-light text-success" type="button" data-bs-toggle="collapse" data-bs-target="#coffeeTest">
+            ☕ Coffee Adulteration Tests
+          </button>
+        </h2>
+        <div id="coffeeTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Chicory Adulteration:</b> Sprinkle coffee powder in water. Chicory sinks quickly; pure coffee floats.</li>
+              <li><b>Starch Test:</b> Add iodine to a coffee solution. Blue color indicates starch adulteration.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edible Oil -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="oilHeading">
+          <button class="accordion-button collapsed bg-light text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#oilTest">
+            🛢 Edible Oil Adulteration Tests
+          </button>
+        </h2>
+        <div id="oilTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Argemone Oil:</b> Add a few drops of nitric acid. Reddish-brown color shows adulteration.</li>
+              <li><b>Freezing Test:</b> Pure oils solidify evenly on cooling. Uneven solidification → adulterated.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spices -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="spicesHeading">
+          <button class="accordion-button collapsed bg-light text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#spicesTest">
+            🍚 Spices Adulteration Tests
+          </button>
+        </h2>
+        <div id="spicesTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Turmeric (lead chromate):</b> Mix turmeric in dilute hydrochloric acid → forms yellow precipitate if adulterated.</li>
+              <li><b>Red chili powder (brick powder):</b> Mix with water → adulterated powder settles quickly.</li>
+              <li><b>Artificial dyes:</b>Dip in alcohol or water → colors dissolve if artificial.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tea Leaves -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="leavesHeading">
+          <button class="accordion-button collapsed bg-light text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#leavesTest">
+            🌱 Tea Leaves Adulteration Tests
+          </button>
+        </h2>
+        <div id="leavesTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Exhausted leaves:</b> Brew tea → weak color and taste indicate poor quality.</li>
+              <li><b>Synthetic colors:</b> Boil in water → unnatural color dissolves.</li>
+              <li><b>Foreign leaves:</b> Examine visually → presence of small stems, sticks, or different leaves.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+
+       <!-- Green Vegetables -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="VegesHeading">
+          <button class="accordion-button collapsed bg-light text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#VegesTest">
+            🥦 Green Vegetabels Adulteration Tests
+          </button>
+        </h2>
+        <div id="VegesTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Dye:</b> Soak in water → Water turns green if dye is present.</li>
+              <li><b>Chemical colors:</b> Rub on paper → Green stains show chemical coloring.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Black Pepper -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="BlackHeading">
+          <button class="accordion-button collapsed bg-light text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#BlackTest">
+            ⚫ Black Pepper
+          </button>
+        </h2>
+        <div id="BlackTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Papaya Seeds:</b> Put in water → Papaya seeds float; real pepper sinks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+       <!-- Fruits -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="fruitsHeading">
+          <button class="accordion-button collapsed bg-light text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#fruitsTest">
+            🥭 Fruits
+          </button>
+        </h2>
+        <div id="fruitsTest" class="accordion-collapse collapse" data-bs-parent="#detectionAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Chemicals:</b> Artificially ripened fruits are bright yellow outside but raw inside.</li>
+              <li><b>Chemicals:</b> Keep in water → Such fruits float unnaturally.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+       
+
+    </div>
+  </div>
+
+<div class=" d-flex flex-row justify-content-center">
+  <div class=" embed-responsive embed-responsive-16by9">
+  <iframe class=" yt embed-responsive-item" src="https://www.youtube.com/embed/G0ZdfplRvVs?rel=0" allowfullscreen></iframe>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
