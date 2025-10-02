@@ -8,28 +8,90 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); /* pastel purple */
       font-family: Arial, sans-serif;
     }
+
     .quiz-box {
-      background: white;
+      background: #fff;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
       margin-top: 30px;
     }
+
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f7f3fb;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .option {
+      position: relative;
+      margin: 10px 0;
+    }
+
+    .option input {
+      display: none;
+    }
+
+    .option label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border: 2px solid #4b3c77;
+      border-radius: 8px; /* rectangular */
+      padding: 12px 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      background: #fafafa;
+      width: 100%;
+    }
+
+    .option label:hover {
+      background: #f0e9fa;
+    }
+
+    .option-letter {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #4b3c77;
+      min-width: 25px;
+      text-align: center;
+    }
+
+    .option input:checked + label {
+      background: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    .option input:checked + label .option-letter {
+      color: white;
+    }
+
+    .option input:checked + label::before {
+      content: "✔";
+      color: white;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .correct-answer {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #d9534f;
+      display: none;
+    }
+
     #result {
       font-weight: bold;
       font-size: 1.3rem;
       margin-top: 20px;
-    }
-    .correct {
-      color: green;
-      font-weight: bold;
-    }
-    .wrong {
-      color: red;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -47,8 +109,8 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="adulterated.html">Adulterated Food</a></li>
           <li class="nav-item"><a class="nav-link" href="detection.html">Detection Methods</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
           <li class="nav-item"><a class="nav-link active" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -61,49 +123,99 @@
       <form id="quizForm">
 
         <!-- Q1 -->
-        <div class="mb-3">
-          <label class="form-label">1. What is food adulteration?</label><br>
-          <input type="radio" name="q1" value="a"> Adding harmful or inferior substances to food <br>
-          <input type="radio" name="q1" value="b"> Cooking food properly <br>
-          <input type="radio" name="q1" value="c"> Preserving food safely
+        <div class="question">
+          <label class="form-label d-block">1. What is food adulteration?</label>
+          <div class="option"><input type="radio" id="q1a" name="q1" value="a"><label for="q1a"><span class="option-letter">A</span> Adding harmful or inferior substances to food</label></div>
+          <div class="option"><input type="radio" id="q1b" name="q1" value="b"><label for="q1b"><span class="option-letter">B</span> Cooking food properly</label></div>
+          <div class="option"><input type="radio" id="q1c" name="q1" value="c"><label for="q1c"><span class="option-letter">C</span> Preserving food safely</label></div>
+          <div class="correct-answer" id="ans-q1">Correct Answer: A. Adding harmful or inferior substances to food</div>
         </div>
 
         <!-- Q2 -->
-        <div class="mb-3">
-          <label class="form-label">2. Which adulterant is commonly found in milk?</label><br>
-          <input type="radio" name="q2" value="a"> Water <br>
-          <input type="radio" name="q2" value="b"> Salt <br>
-          <input type="radio" name="q2" value="c"> Sugar
+        <div class="question">
+          <label class="form-label d-block">2. Which adulterant is commonly found in milk?</label>
+          <div class="option"><input type="radio" id="q2a" name="q2" value="a"><label for="q2a"><span class="option-letter">A</span> Water</label></div>
+          <div class="option"><input type="radio" id="q2b" name="q2" value="b"><label for="q2b"><span class="option-letter">B</span> Salt</label></div>
+          <div class="option"><input type="radio" id="q2c" name="q2" value="c"><label for="q2c"><span class="option-letter">C</span> Sugar</label></div>
+          <div class="correct-answer" id="ans-q2">Correct Answer: A. Water</div>
         </div>
 
         <!-- Q3 -->
-        <div class="mb-3">
-          <label class="form-label">3. What chemical is often added to chili powder as an adulterant?</label><br>
-          <input type="radio" name="q3" value="a"> Lead salts <br>
-          <input type="radio" name="q3" value="b"> Turmeric <br>
-          <input type="radio" name="q3" value="c"> Rice flour
+        <div class="question">
+          <label class="form-label d-block">3. What chemical is often added to coffee as an adulterant?</label>
+          <div class="option"><input type="radio" id="q3a" name="q3" value="a"><label for="q3a"><span class="option-letter">A</span> Starch</label></div>
+          <div class="option"><input type="radio" id="q3b" name="q3" value="b"><label for="q3b"><span class="option-letter">B</span> Turmeric</label></div>
+          <div class="option"><input type="radio" id="q3c" name="q3" value="c"><label for="q3c"><span class="option-letter">C</span> Rice flour</label></div>
+          <div class="correct-answer" id="ans-q3">Correct Answer: A. Starch</div>
         </div>
 
         <!-- Q4 -->
-        <div class="mb-3">
-          <label class="form-label">4. Which simple method can detect water in milk?</label><br>
-          <input type="radio" name="q4" value="a"> Litmus test <br>
-          <input type="radio" name="q4" value="b"> Freezing point test <br>
-          <input type="radio" name="q4" value="c"> Heat test
+        <div class="question">
+          <label class="form-label d-block">4. Which simple method can detect water in milk?</label>
+          <div class="option"><input type="radio" id="q4a" name="q4" value="a"><label for="q4a"><span class="option-letter">A</span> Litmus test</label></div>
+          <div class="option"><input type="radio" id="q4b" name="q4" value="b"><label for="q4b"><span class="option-letter">B</span> Freezing point test</label></div>
+          <div class="option"><input type="radio" id="q4c" name="q4" value="c"><label for="q4c"><span class="option-letter">C</span> Heat test</label></div>
+          <div class="correct-answer" id="ans-q4">Correct Answer: B. Freezing point test</div>
         </div>
 
         <!-- Q5 -->
-        <div class="mb-3">
-          <label class="form-label">5. Which of these is a health risk of food adulteration?</label><br>
-          <input type="radio" name="q5" value="a"> Stronger immunity <br>
-          <input type="radio" name="q5" value="b"> Food poisoning <br>
-          <input type="radio" name="q5" value="c"> Better taste
+        <div class="question">
+          <label class="form-label d-block">5. Which of these is a health risk of food adulteration?</label>
+          <div class="option"><input type="radio" id="q5a" name="q5" value="a"><label for="q5a"><span class="option-letter">A</span> Stronger immunity</label></div>
+          <div class="option"><input type="radio" id="q5b" name="q5" value="b"><label for="q5b"><span class="option-letter">B</span> Food poisoning</label></div>
+          <div class="option"><input type="radio" id="q5c" name="q5" value="c"><label for="q5c"><span class="option-letter">C</span> Better taste</label></div>
+          <div class="correct-answer" id="ans-q5">Correct Answer: B. Food poisoning</div>
         </div>
 
-        <button type="button" class="btn btn-primary" onclick="checkAnswers()">Submit</button>
+        <!-- Q6 -->
+        <div class="question">
+          <label class="form-label d-block">6. What is the main motive behind food adulteration?</label>
+          <div class="option"><input type="radio" id="q6a" name="q6" value="a"><label for="q6a"><span class="option-letter">A</span> To increase profit</label></div>
+          <div class="option"><input type="radio" id="q6b" name="q6" value="b"><label for="q6b"><span class="option-letter">B</span> To improve health</label></div>
+          <div class="option"><input type="radio" id="q6c" name="q6" value="c"><label for="q6c"><span class="option-letter">C</span> To reduce waste</label></div>
+          <div class="correct-answer" id="ans-q6">Correct Answer: A. To increase profit</div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+          <label class="form-label d-block">7. Which chemical is used for ripen bananas?</label>
+          <div class="option"><input type="radio" id="q7a" name="q7" value="a"><label for="q7a"><span class="option-letter">A</span> Calciun Carbide</label></div>
+          <div class="option"><input type="radio" id="q7b" name="q7" value="b"><label for="q7b"><span class="option-letter">B</span> HCL</label></div>
+          <div class="option"><input type="radio" id="q7c" name="q7" value="c"><label for="q7c"><span class="option-letter">C</span> Sulphide</label></div>
+          <div class="correct-answer" id="ans-q7">Correct Answer: A. Calcium Carbide</div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question">
+          <label class="form-label d-block">8. Which natural substance is sometimes mixed with tea leaves as an adulterant?</label>
+          <div class="option"><input type="radio" id="q8a" name="q8" value="a"><label for="q8a"><span class="option-letter">A</span> Iron filings</label></div>
+          <div class="option"><input type="radio" id="q8b" name="q8" value="b"><label for="q8b"><span class="option-letter">B</span> Tamarind</label></div>
+          <div class="option"><input type="radio" id="q8c" name="q8" value="c"><label for="q8c"><span class="option-letter">C</span> Dry leaves</label></div>
+          <div class="correct-answer" id="ans-q8">Correct Answer: C. Dry leaves</div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question">
+          <label class="form-label d-block">9. Which natural substance is sometimes mixed with black pepper as an adulterant?</label>
+          <div class="option"><input type="radio" id="q9a" name="q9" value="a"><label for="q9a"><span class="option-letter">A</span> Papaya Seeds</label></div>
+          <div class="option"><input type="radio" id="q9b" name="q9" value="b"><label for="q9b"><span class="option-letter">B</span> Stones</label></div>
+          <div class="option"><input type="radio" id="q9c" name="q9" value="c"><label for="q9c"><span class="option-letter">C</span> Paper</label></div>
+          <div class="correct-answer" id="ans-q9">Correct Answer: A. Papaya Seeds</div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question">
+          <label class="form-label d-block">10. Which simple home test detects starch in milk?</label>
+          <div class="option"><input type="radio" id="q10a" name="q10" value="a"><label for="q10a"><span class="option-letter">A</span> Iodine test</label></div>
+          <div class="option"><input type="radio" id="q10b" name="q10" value="b"><label for="q10b"><span class="option-letter">B</span> Salt test</label></div>
+          <div class="option"><input type="radio" id="q10c" name="q10" value="c"><label for="q10c"><span class="option-letter">C</span> Flame test</label></div>
+          <div class="correct-answer" id="ans-q10">Correct Answer: A. Iodine test</div>
+        </div>
+
+        <!-- Submit -->
+        <button type="button" class="btn btn-primary w-100 mt-3" onclick="checkAnswers()">Submit</button>
       </form>
       <div id="result" class="text-center"></div>
-      <div id="feedback" class="mt-4"></div>
     </div>
   </div>
 
@@ -115,53 +227,48 @@
         q2: "a",
         q3: "a",
         q4: "b",
-        q5: "b"
-      };
-
-      let explanations = {
-        q1: "Food adulteration means adding harmful or inferior substances to food.",
-        q2: "Milk is often adulterated with water.",
-        q3: "Lead salts are sometimes added to chili powder to increase weight.",
-        q4: "The freezing point test can detect added water in milk.",
-        q5: "Food adulteration can cause food poisoning and serious health issues."
+        q5: "b",
+        q6: "a",
+        q7: "a",
+        q8: "c",
+        q9: "a",
+        q10: "a"
       };
 
       let score = 0;
       let total = Object.keys(answers).length;
-      let feedback = "";
 
       for (let q in answers) {
         let selected = document.querySelector('input[name="'+q+'"]:checked');
-        if (selected) {
-          if (selected.value === answers[q]) {
-            score++;
-            feedback += <p class="correct">✔ Question ${q.substring(1)}: Correct!</p>;
-          } else {
-            feedback += <p class="wrong">✘ Question ${q.substring(1)}: Wrong. Correct answer is <b>${answers[q]}</b>. ${explanations[q]}</p>;
-          }
+        let correctSpan = document.getElementById("ans-" + q);
+
+        if (selected && selected.value === answers[q]) {
+          score++;
+          correctSpan.style.display = "none"; // hide if correct
         } else {
-          feedback += <p class="wrong">✘ Question ${q.substring(1)}: Not answered. Correct answer is <b>${answers[q]}</b>. ${explanations[q]}</p>;
+          correctSpan.style.display = "block"; // show correct if wrong
         }
       }
 
       let resultText = "You scored " + score + " out of " + total + "!";
       if(score === total){
         resultText += " 🎉 Excellent!";
-      } else if(score >= 3){
+      } else if(score >= 6){
         resultText += " 👍 Good job!";
       } else {
         resultText += " ❌ Keep learning!";
       }
 
       document.getElementById("result").innerHTML = resultText;
-      document.getElementById("feedback").innerHTML = feedback;
     }
   </script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
   <!-- Chatbot Script -->
 <script src='https://www.noupe.com/embed/01997f17f9ba7e048ac477f4743ebeebbc64.js'></script>
-</body>
 
+</body>
 </html>
+
